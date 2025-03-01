@@ -22,10 +22,10 @@ export default function Home() {
         const data = await apiRequest("https://eco-snap-server.vercel.app/report/all");
         console.log("API Response:", data);
 
-        if (Array.isArray(data)) {
-          setReports(data.reverse());
-        } else if (data && Array.isArray(data.report)) {
-          setReports(data.reports.reverse());
+        if (Array.isArray(data.report)) {
+          setReports(data.report.reverse());
+        } else if (data.report && Array.isArray(data.report)) {
+          setReports(data.report.reverse());
         } else {
           console.error("Unexpected API response format:", data);
         }
@@ -48,6 +48,9 @@ export default function Home() {
           <nav className="flex space-x-6">
             <Link href={"/"} className="text-sm font-medium text-gray-700 hover:text-blue-600 transition">Home</Link>
             <Link href={"/addworker"} className="text-sm font-medium text-gray-700 hover:text-blue-600 transition">Add Worker</Link>
+            <Link href={"/map"} className="text-sm font-medium text-gray-700 hover:text-blue-600 transition">
+              Map
+            </Link>
             <Link href={"/login"} className="text-sm font-medium text-red-600 hover:text-red-800 transition">Logout</Link>
           </nav>
         </div>

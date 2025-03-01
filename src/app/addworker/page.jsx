@@ -74,6 +74,9 @@ export default function AddWorker() {
           <nav className="flex space-x-6">
             <Link href={"/"} className="text-sm font-medium text-gray-700 hover:text-blue-600 transition">Home</Link>
             <Link href={"/addworker"} className="text-sm font-medium text-gray-700 hover:text-blue-600 transition">Add Worker</Link>
+            <Link href={"/map"} className="text-sm font-medium text-gray-700 hover:text-blue-600 transition">
+              Map
+            </Link>
             <Link href={"/login"} className="text-sm font-medium text-red-600 hover:text-red-800 transition">Logout</Link>
           </nav>
         </div>
