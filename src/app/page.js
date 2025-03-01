@@ -24,7 +24,7 @@ export default function Home() {
 
         if (Array.isArray(data)) {
           setReports(data.reverse());
-        } else if (data && Array.isArray(data.reports)) {
+        } else if (data && Array.isArray(data.report)) {
           setReports(data.reports.reverse());
         } else {
           console.error("Unexpected API response format:", data);
