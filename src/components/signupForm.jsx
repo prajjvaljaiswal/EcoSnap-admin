@@ -20,7 +20,9 @@ export function SignupForm({
 
     const handleSignin = async(e)=>{
         try {
-            await signUp(email,password)
+            e.preventDefault()
+            const user = await signUp(email.target.value, password.target.value)
+            console.log(user)
             router.push("/")
         } catch (error) {
             setError(error)
